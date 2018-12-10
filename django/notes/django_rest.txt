@@ -1,0 +1,23 @@
+View 
+
+Application logic behind our API
+Code that gets ran when user accesses our API
+!!! input into app dir views.py. !!!
+
+urls
+
+defines in the profiles_project folder - file - urls.py
+
+APIViews
+
+#Use Cases
+
+Use when you need full control over the logic
+Processing files and rendering a synchronous response
+Calling other APIs in the same request
+Accessing local files or data
+
+Django Rest Serializer
+
+a object which changes json to and from python dict object
+

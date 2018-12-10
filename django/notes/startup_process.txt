@@ -1,0 +1,27 @@
+## ON STARTUP
+
+# start the vagrant server
+    vagrant up
+
+# connect to the vagrant server
+    vagrant ssh
+
+# mkvirtualenv by default installed to wrong directory use source "path/to/directory" to fix
+# NEEDS TO BE ADDED TO PATH
+	which mkvirtualenv
+   26  source "/usr/local/bin/virtualenvwrapper.sh"
+
+# enable the profiles_api virtual environment
+    workon profiles_api
+
+# start the django server
+    python manage.py runserver 0.0.0.0:8080
+
+# exit the django server
+   CTRL + c 
+
+#deactivate the virtualenvironment
+   29  deactivate
+
+# disconnect from the vagrant server 
+    exit

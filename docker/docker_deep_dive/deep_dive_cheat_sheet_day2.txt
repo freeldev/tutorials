@@ -1,0 +1,64 @@
+ 181  docker image pull alpine:latest
+ 2182  docker image pull -a nigelpoulton/tu-demo
+ 2183  docker image ls
+ 2184  docker image ls --filter dangling=true
+ 2185  docker image prune
+ 2186  docker image ls --filter=reference="*:latest"
+ 2187  docker image ls --format "{{.Size}}"
+ 2188  docker image ls --format "{{.Repository}}: {{.Tag}}: {{.Size}}"
+ 2189  docker search nigelpoulton
+ 2190  docker search alpine
+ 2191  docker search alpine --filter "is-official=true"
+ 2192  docker search alpine --filter "is-automated=true"
+ 2193  docker image inspect ubuntu:latest
+ 2194  docker history
+ 2195  docker image ls --digests
+ 2196  docker container run -rm golang go version
+ 2197  docker container run --rm golang go version
+ 2199  docker image rm 769202423836
+ 2201  docker container kill f30d4d270df5
+ 2204  docker container rm f30d4d270df5
+ 2205  docker image rm $(docker image ls -q)
+ 2207  docker image rm $(docker image ls -q) -f
+ 2209  docker image inspect
+ 2216  docker image inspect 11cd0b38bc3c
+ 2217  docker image rm $(docker image ls -q)
+ 2218  docker image ls
+ 2219  docker container run apline:latest sleep 10
+ 2220  docker container run alpine:latest sleep 10
+ 2221  docker version
+ 2222  service docker status
+ 2223  systemctl is-active docker
+ 2224  docker container run -it ubuntu:latest bin/bash
+ 2227  docker container exec -it 8aec8a1cc9db bash
+ 2228  docker container ps
+ 2229  docker container stop 8aec8a1cc9db
+  2234  docker container run --name percy -it ubuntu:latest /bin/bash
+ 2235  docker container stop percy
+ 2237  docker container ls -a
+ 2238  docker container start percy 
+ 2240  docker container exec -it percy bash
+ 2241  docker container stop percy
+ 2242  docker container rm percy
+ 2248  docker container run --name neversaydie -it --restart always alpine sh
+ 2250  docker container run -d --name always --restart always alpine sleep id
+ 2251  docker container run -d --name unless-stopped --restart unless-stopped alpine sleep id
+ 2257  docker container stop always unless-stopped
+ 2261  sudo systemctl restart docker
+ 2262  docker container ls -a
+ 2270  docker container run -d --name webserver -p 80:8080 nigelpoulton/pluralsight-docker-ci
+ 2271  docker container ls
+ 2272  docker image inspect nigelpoulton/pluralsight-docker-ci:latest 
+ 2273  docker container rm $(docker container ls -aq) -f
+ 2283  docker image build -t web:latest .
+ 2284  docker images
+ 2285  docker login
+ 2286  docker image tag web:latest nigelpoulton/web:latest
+ 2287  docker image tag nigelpoulton/web:latest a7xce/web:latest
+ 2288  docker images
+ 2289  docker image push a7xce/web:latest
+ 2290  docker image tag web:latest freeldev1991/web:latest
+ 2291  docker image push freeldev1991/web:latest 
+ 2292  docker container run -d --name c1 -p 80:8080 web:latest
+ 2293  docker container ls
+ 2294  docker container stop cc112230  docker container rm 8aec8a1cc9db

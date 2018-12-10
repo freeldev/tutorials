@@ -1,0 +1,23 @@
+Basic Requirements
+
+Creating new feed items 
+    - logged in user only
+
+Updating feed items
+    - logged in user only
+
+Delete profile feed items
+    - logged in user only
+
+Viewing other profiel status updates
+    - All users
+
+API URLs
+
+/api/feed/ - list all feed items
+    - GET (list feed items)
+    - POST (create feed item for logged in user)
+/api/feed/<feed_item_id>/ - manage specific feed items
+    - GET ( get the feed item ) 
+    - PUT / PATCH ( Update feed item )
+    - DELETE ( delete feed item )

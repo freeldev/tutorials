@@ -1,0 +1,68 @@
+don't have url.py updates for mb_project or posts -- need the steps
+don't have the views updates for posts
+don't have the templates updates for global templates
+don't have the models updates for psots
+
+mkdir mb
+cd mb
+
+pipenv install django
+
+pipenv shell
+
+  830  django-admin startproject mb_project .
+  834  python manage.py startapp posts
+
+# added posts to INSTALLED_APPS 
+  835  vim mb_project/settings.py 
+
+# migrate current models to be configured by django
+  836  python manage.py migrate
+
+# add custom models  
+  847  vim posts/models.py 
+
+# prepare the models for migration
+# specify which models to migrate by adding the specific app
+  848  python manage.py makemigrations
+
+# interface the models with the db
+  849  python manage.py migrate posts
+
+#create a super user for access to the django admin
+  850  python manage.py createsuperuser
+
+# add mb app to the admin file
+# admin.site.register(models.Post)
+  851  vim posts/admin.py 
+
+# global templates directory for access by all models in all apps
+  857  mkdir templates
+
+# add tests to app
+  870  vim posts/tests.py 
+
+# run tests
+  871  python manage.py test
+
+# add procfile for heroku deployment
+  887  vim Procfile
+
+# install gunicorn for heroku deployment
+  888  pipenv install gunicorn
+
+# ensure ALLOWED_HOSTS allows all with '*'
+  889  vim mb_project/settings.py 
+
+# finished updating for heroku deployment
+  892  git commit "updates for heroku deployment"
+
+# setup heroku app
+
+  897  heroku login
+  898  heroku create
+  899  heroku git:remote -a tranquil-ridge-77688
+  900  heroku config:set DISABLE_COLLECTSTATIC=1
+  901  git push heroku master
+  902  heroku ps:scale web=1
+  940  heroku open

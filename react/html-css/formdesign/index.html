@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Form</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <h2>Learning Forms</h2>
+        <form action="submit.php">
+            <fieldset>
+                <legend>User Login Info</legend>
+                <label for="user">Username</label>
+                <input type="text" name="user" placeholder="Username or email">
+                <br>
+                <br>
+                <label for="pswd">Password</label>
+                <input type="password" name="pswd" placeholder="enter your password">
+                <br>
+                <br>
+                <input type="submit">
+                <input type="reset">
+            </fieldset>
+            <br>
+            <br>
+            <textarea name="" id="" cols="30" rows="10" placeholder="Enter your message"></textarea>
+            <br>
+            <br>
+            <input type="radio" name="gender" value="male">
+            <label for="gender">Male</label>
+            <input type='radio' name='gender' value='female'>
+            <label for="gender">Female</label>
+            <input type="radio" name="gender" value="unknown">
+            <label for='gender'>Unknown</label>
+            <br>
+            <br>
+            <input type='checkbox' name='interest' value='HTML' checked>
+            <label for="interest">HTML</label>
+            <input type='checkbox' name='interset' value='CSS'>
+            <label for="interest">CSS</label>
+            <input type='checkbox' name='interest' value='Javascript'>
+            <label for='interest'>Javascript</label>
+
+            <br>
+            <br>
+
+            <label for="work">Work Type</label>
+            <select name="Work" id="">
+                <option value="Full-time">Full-Time</option>
+                <option value="Part-Time" selected>Part-Time</option>
+                <option value="Freelance">Freelance</option>
+            </select>
+        </form>
+    </div>
+</body>
+
+</html>

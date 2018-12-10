@@ -1,0 +1,7 @@
+# INSTALL NODE.JS JUPYTER NOTEBOOK
+
+npm install -g ijavascript
+ijs
+
+
+

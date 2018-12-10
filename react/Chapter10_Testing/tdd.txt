@@ -1,0 +1,24 @@
+letting testing drive your development proccess is TEST DRIVEN DEVELOPMENT
+
+3 steps 
+
+1.) Write the tests first
+
+    this is the most critical step.  You declare what you are building and how
+    it should work first in a test.
+
+2.) Run the tests and watch them fail (red)
+
+    run your tests and whatch them fail before you write the code
+
+3.) Write the minimal amount of code rqeuired to make the tests pass ( green )
+
+    now all you have to do is make the tests pass.  focus on specifically 
+    making each tests pass: do not add any functinoality beyond the scope
+    of this test
+
+
+4.) Refactor both the code and the tests (gold)
+
+    Once the tests pass, it is time to take a closer lookat your code and your tests.
+    try to express your code as simply and as beautifully as possible.

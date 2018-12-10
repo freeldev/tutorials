@@ -1,0 +1,33 @@
+body {
+    background-color: #9fc0f4;
+    color: #666;
+    font-family: "Satisfy";
+    font-weight: normal'
+
+}
+
+.offer {
+    position: relative;
+    background-color: #fff;
+    border: 10px dashed #f2a4a4;
+    padding: 20px;
+    width: 200px;
+    margin: 100px auto;
+}
+
+.offer h1 {
+    font-family: "Satisfy", Georgia, "Times New Roman", Times, serif;
+    font-weight: normal;
+    color: #d85d5d;
+    text-align: center;
+}
+
+.offer img {
+    position: absolute;
+    top: -45px;
+    right: -45px;
+}
+
+p {
+    text-align: center;
+}

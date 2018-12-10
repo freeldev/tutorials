@@ -1,0 +1,6 @@
+
+after adding models you need to do the following
+
+python manage.py makemigrations
+
+python manage.py migrate

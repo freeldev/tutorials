@@ -1,0 +1,3 @@
+// presentational components only work with presenting the display of the
+// components all data is sent to these components via properties
+// and passed out of these components via callback functions

@@ -1,0 +1,25 @@
+Basic Requirements
+
+    Create new profile
+        - validate profile data
+
+    List existing profiles
+        - Search for profiles
+
+    View specific profile
+
+    Update my profile of logged in user
+        Change Password
+        update name/ email address
+
+    Deelete Prifle
+
+URLS:
+
+    - /api/profile/ - list of all profiles
+        - GET(list profiles)
+        - POST(create profiles)
+    - /api/profile/<profile_id>/ - manage specific profile
+        - GET(view specific profile)
+        - PUT / PATCH (update profile)
+        - DELETE (remove profile)

@@ -1,0 +1,8 @@
+
+#configure vagrant file in the root dir
+
+#set up vagrant server within project dir
+    vagrant up
+
+#connect to the vagrant server
+    vagrant ssh

@@ -1,0 +1,28 @@
+##WORKING WITH DJANGO
+
+#script used to start a django project project
+   40  django-admin.py startproject profiles_project
+   41  cd profiles_project/
+
+#the two folders with project name "profiles_project" 
+	1. root dir
+	2. django settings file for entire django project
+
+#script created by django when runing script above
+#creates an app in our project !!
+   43  python manage.py startapp profiles_api
+
+#tells django how to setup our db based on the models in models.py
+    python manage.py makemigrations
+
+#run the migration to create the database
+    python manage.py migrate
+
+#create a super user
+    python manage.py createsuperuser
+
+#register super users to work with django ui 
+#admin.py
+    from django.contrib import admin
+    from . import models
+    admin.site.register(models)

@@ -1,0 +1,26 @@
+viewsets over APIView
+
+    create retrieve update delete
+    create a quick and simple API
+    need little to no customization on the logic
+    working with standard structures
+
+When testing the viewsets
+
+    #TO VIEW THE ROOT SUMMARY
+    127.0.0.1:8080/api/hello-viewset/
+
+    #TO VIEW THE DETAILS OF ROUTER
+    127.0.0.1:8080/api/hello-viewset/1/ 
+
+When to use APIView
+    - you need full control over logic
+    - processing files and rendering a synchronous response
+    - you are caling other apis
+    - accessing local files or data
+
+When to use viewset
+    - you need a simple CRUD CREATE READ UPDATE DELETE interface to your db
+    - you want a quick and simple API
+    - you need little or no customization on the logic
+    - you are working with standard data structures

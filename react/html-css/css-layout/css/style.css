@@ -1,0 +1,27 @@
+body {
+  background-color: #70e2ff;
+}
+
+.wrapper {
+  background-color: white;
+  padding: 10px;
+  /* padding-bottom: 20px;
+    padding-top: 20px;     */
+  margin: 30px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+main {
+  float: left;
+  background-color: #ee6d6d;
+}
+
+aside {
+  float: right;
+  background-color: #afea9e;
+}
+
+footer {
+  clear: both;
+}

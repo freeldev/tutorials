@@ -1,0 +1,26 @@
+# ADD CSS PREPROCESSOR SCSS / SASS TO REACT APP
+
+    yarn add node-sass-chokidar
+
+    # EDIT PACKAGE.JSON
+
+    "scripts": {
+         "build-css": "node-sass-chokidar src/ -o src/",
+         "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+         "start": "react-scripts start",
+         "build": "react-scripts build",
+         "test": "react-scripts test --env=jsdom",
+
+    # EDIT PACKAGE.JSON TO RUN watch-css AUTOATICALLY WITH npm start and run build-css
+
+    yarn add npm-run-all
+
+    "scripts": {
+      "build-css": "node-sass-chokidar src/ -o src/",
+      "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+      "start-js": "react-scripts start",
+      "start": "npm-run-all -p watch-css start-js",
+      "build": "npm run build-css && react-scripts build",
+      "test": "react-scripts test --env=jsdom",
+      "eject": "react-scripts eject"
+    }

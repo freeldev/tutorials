@@ -1,0 +1,300 @@
+
+ 181  docker image pull alpine:latest
+ 1166  docker-machine create --driver virtualbox myvm1
+ 1169  docker-machine ssh myvm1 "docker swarm init --advertise-addr 192.168.99.100:2376"
+ 1171  docker swarm join --token SWMTKN-1-69vk0kltjdgn7trwoo9ahx8s4aerwoyceud3daqnia0murb6j6-8rfnajt8wg6o1cbswf3dyi9ex 192.
+ 1176  docker-machine ssh myvm1 "docker swarm join --token SWMTKN-1-0nr5mdryxyq7rard1nzmatn8peztr0xwhkuxmd8n5rv25zjx1c-2y7ktf81cs28y440uqfgo1f9a [2a02:ab04:142:b300:fc7c:637b:86:6382]:2377"
+ 1179  docker node ls
+ 1180  docker-machine ls
+ 1184  docker-machine rm myvm1
+ 1188  docker-machine create -d virtualbox --virtualbox-boot2docker-url=https://github.com/boot2docker/boot2docker/releases/download/v17.12.1-ce/boot2docker.iso
+ 1193  docker-machine rm 183
+ 1194  docker-machine ls
+ 1201  eval $(docker-machine env myvm1)
+ 1204  docker stack deploy -c docker-compose.yml getstartedlab
+ 1205  docker stack ps getstartedlab 
+ 1211  docker swarm init
+ 1459  docker build -t friendlyhello .
+ 1836  mkdir kubernetes-docker
+ 1845  vboxmanage controlvm "kubernetes-docker_default_1529134447726_95006" poweroff
+
+ 2029  wget -qO- https://get.docker.com/ | sh
+ 2032  sudo usermod -aG docker a7xce
+ 2034  docker --version
+ 2071  docker image ls
+ 2072  docker images
+ 2073  docker pull ubuntu:latest
+ 2075  docker container run -it ubuntu:latest /bin/bash
+ 2078  docker container ls
+ 2083  docker container exec -it 71516ec36385 bash
+ 2086  docker container stop 71516ec36385
+ 2087  docker container rm 71516ec36385
+ 2090  docker kill $(docker ps -q)
+ 2091  docker container ls
+ 2092  docker container ls -a
+ 2097  docker rm $(docker ps -a -q)
+ 2096  docker kill $(docker ps -a -q)
+ 2098  docker container ls -a
+ 2099  docker container ls
+ 2101  docker kill $(docker ps -a -q)
+ 2103  docker rm $(docker ps -a -q)
+ 2104  docker container ls -a
+ 2105  docker container kill e21cca6171af
+ 2106  docker container rm e21cca6171af
+ 2108  docker swarm
+ 2113  docker service ps
+ 2114  docker-machine ls
+ 2116  docker-machine rm myvm2
+ 2117  docker-machine ls
+ 2118  docker container ls
+ 2119  docker rm $(docker rm -a -q)
+ 2120  docker kill $(docker ps -a -q)
+ 2122  docker container ls -a
+ 2123  docker-machine ls
+ 2124  docker stack rm getstartedlab 
+ 2125  docker container ls
+ 2126  eval $(docker-machine env -u)
+ 2128  docker kill $(docker ps -a -q)
+ 2129  docker rm $(docker ps -a -q)
+ 2145  docker image build
+ 2146  docker image build -t test:latest .
+ 2157  docker container run -d --name web1 --publish 8080:8080 test:latest
+ 2159  docker image pull ubuntu:latest
+ 2160  docker image pull alpine:latest
+ 2182  docker image pull -a nigelpoulton/tu-demo
+ 2183  docker image ls
+ 2184  docker image ls --filter dangling=true
+ 2185  docker image prune
+ 2186  docker image ls --filter=reference="*:latest"
+ 2187  docker image ls --format "{{.Size}}"
+ 2188  docker image ls --format "{{.Repository}}: {{.Tag}}: {{.Size}}"
+ 2189  docker search nigelpoulton
+ 2190  docker search alpine
+ 2191  docker search alpine --filter "is-official=true"
+ 2192  docker search alpine --filter "is-automated=true"
+ 2193  docker image inspect ubuntu:latest
+ 2194  docker history
+ 2195  docker image ls --digests
+ 2196  docker container run -rm golang go version
+ 2197  docker container run --rm golang go version
+ 2199  docker image rm 769202423836
+ 2201  docker container kill f30d4d270df5
+ 2204  docker container rm f30d4d270df5
+ 2205  docker image rm $(docker image ls -q)
+ 2207  docker image rm $(docker image ls -q) -f
+ 2209  docker image inspect
+ 2216  docker image inspect 11cd0b38bc3c
+ 2217  docker image rm $(docker image ls -q)
+ 2218  docker image ls
+ 2219  docker container run apline:latest sleep 10
+ 2220  docker container run alpine:latest sleep 10
+ 2221  docker version
+ 2222  service docker status
+ 2223  systemctl is-active docker
+ 2224  docker container run -it ubuntu:latest bin/bash
+ 2227  docker container exec -it 8aec8a1cc9db bash
+ 2228  docker container ps
+ 2229  docker container stop 8aec8a1cc9db
+  2234  docker container run --name percy -it ubuntu:latest /bin/bash
+ 2235  docker container stop percy
+ 2237  docker container ls -a
+ 2238  docker container start percy 
+ 2240  docker container exec -it percy bash
+ 2241  docker container stop percy
+ 2242  docker container rm percy
+ 2248  docker container run --name neversaydie -it --restart always alpine sh
+ 2250  docker container run -d --name always --restart always alpine sleep id
+ 2251  docker container run -d --name unless-stopped --restart unless-stopped alpine sleep id
+ 2257  docker container stop always unless-stopped
+ 2261  sudo systemctl restart docker
+ 2262  docker container ls -a
+ 2270  docker container run -d --name webserver -p 80:8080 nigelpoulton/pluralsight-docker-ci
+ 2271  docker container ls
+ 2272  docker image inspect nigelpoulton/pluralsight-docker-ci:latest 
+ 2273  docker container rm $(docker container ls -aq) -f
+ 2283  docker image build -t web:latest .
+ 2284  docker images
+ 2285  docker login
+ 2286  docker image tag web:latest nigelpoulton/web:latest
+ 2287  docker image tag nigelpoulton/web:latest a7xce/web:latest
+ 2288  docker images
+ 2289  docker image push a7xce/web:latest
+ 2290  docker image tag web:latest freeldev1991/web:latest
+ 2291  docker image push freeldev1991/web:latest 
+ 2292  docker container run -d --name c1 -p 80:8080 web:latest
+ 2293  docker container ls
+ 2294  docker container stop cc112230  docker container rm 8aec8a1cc9db
+
+DOCKER-COMPOSE
+
+ 2023  docker-compose up
+
+ # give output to terminal while running app
+ 2024  docker-compose up &
+
+ # show docker-compose networks 
+ 2027  docker network ls
+
+ # list docker-compose volumnes
+ 2028  docker volume ls
+
+ # stop & delete app instance
+ 2029  docker-compose down
+
+ # run docker app in background
+ 2031  docker-compose up -d
+
+ # see status of docker apps 
+ 2032  docker-compose ps
+
+ #
+ 2033  docker-compose top
+
+ # temporarily stop the docker container
+ 2034  docker-compose stop
+
+ # restarted temporarily stopped container
+ 2037  docker-compose restart
+
+ # inspect where to put the app file from docker-compose file to change in development
+ 2050  docker volume inspect counter-app_counter-vol | grep Mount
+ 2057  sudo cp app.py /var/lib/docker/volumes/counter-app_counter-vol/_data/app.py
+
+ # initialize swarm on specified advertise-addr and listen-addr
+ 2070  docker swarm init --advertise-addr 10.0.0.1:2377 --listen-addr 10.0.0.1:2377
+
+ # leave the swarm ( --force flag needed if leader ) 
+ 2071  docker swarm leave
+
+ # list nodes from docker swarm ( if joined as mgr or wrk)
+ 2076  docker node ls
+
+ # get the token to join docker-swarm 
+ 2077  docker swarm join-token worker
+ 2079  docker swarm join-token manager 
+
+ # use docker-machine to create virtual drives 
+ 2120  docker-machine create --driver virtualbox mgr2
+ 2121  docker-machine create --driver virtualbox mgr3
+ 2122  docker-machine create --driver virtualbox wrk1
+ 2123  docker-machine create --driver virtualbox wrk2 && docker-machine create --driver virtualbox wrk3
+
+ # start a docker swarm on local hose with docker-machine
+ 2198  docker-machine ssh mgr1 "docker swarm init --advertise-addr 192.168.99.103:2377 --listen-addr 192.168.99.103:2377"
+
+ # run comands from virtual machine box
+ 2128  docker-machine ssh mgr2 "docker swarm join --token SWMTKN-1-46sobbg8a6pakwkr5getgasco0dwgwup5dmgu2v63hcvy2m8m0-7iv6w5ysa4r5wwod2tb7mf8p2 192.168.0.3:2377"
+ 2129  docker-machine ssh mgr3 "docker swarm join --token SWMTKN-1-46sobbg8a6pakwkr5getgasco0dwgwup5dmgu2v63hcvy2m8m0-7iv6w5ysa4r5wwod2tb7mf8p2 192.168.0.3:2377"
+
+ # leave or leave forcefully from a docker swarm
+ 2134  docker-machine ssh mgr3 "docker swarm leave"
+ 2139  docker-machine ssh mgr2 "docker swarm leave --force"
+
+ # list the docker nodes on the managing container
+ 2207  docker-machine ssh mgr1 "docker node ls"
+
+ # lock the swarm so restarted nodes must present encryption key/pass to rejoin
+ 2208  docker-machine ssh mgr1 "docker swarm update --autolock=true"
+
+ # manually restart docker-machine manager node
+ 2211  docker-machine restart mgr2
+
+ # see the outcome of the previous command "mgr2 = DOWN"
+ 2213  docker-machine ssh mgr1 "docker node ls"
+
+ # run the command add the encryption key / passs to rejoin swarm
+ 2216  docker-machine ssh mgr2 "docker swarm unlock"
+ 2217  docker-machine ssh mgr1 "docker node ls"
+
+
+ # UPDATE THE COMMENTS ON THESE COMMANDS !!
+ 2218  docker service create --name web-fe -p 8080:8080 --replicas 5 nigelpoulton/pluralsight-docker-ci
+ 2219  docker-machine stop mgr1 mgr2 mgr3 wrk1 wrk2 wrk3
+ 2220  history | grep docker | vim -
+ 2221  ls
+ 2222  vim docker_cheat_sheet_master.txt 
+ 2223  docker-machine create --drive virtualbox mgr1_service_example mgr2_service_example mgr3_service_example wrk1_service_example wrk2_service_example wrk3_service_example
+ 2224  docker-machine create --driver virtualbox mgr1_service_example mgr2_service_example mgr3_service_example wrk1_service_example wrk2_service_example wrk3_service_example
+ 2225  docker-machine create --driver virtualbox mgr1_service_example && docker-machinecreate --driver virtualbox mgr2_service_example && docker-machine create --driver virtualbox mgr3_service_example && docker-machine create --driver virtualbox wrk1_service_example docker-machine create --driver virtualbox wrk2_service_example && docker-machine create --driver virtualbox wrk3_service_example
+ 2226  docker-machine create --driver virtualbox mgr1-service-example && docker-machinecreate --driver virtualbox mgr2-service-example && docker-machine create --driver virtualbox mgr3-service-example && docker-machine create --driver virtualbox wrk1-service-example docker-machine create --driver virtualbox wrk2-service-example && docker-machine create --driver virtualbox wrk3-service-example
+ 2227  docker-machine ls
+ 2228  docker-machine rm mgr1-service-example 
+ 2229  docker-machine ls
+ 2230  docker-machine start mgr1
+ 2231  docker-machine ls
+ 2232  docker-machine ssh mgr1 "docker service create --name web-fe -p 8080:8080 --replicas 5 nigelpoulton/pluralsight-docker-ci
+"
+ 2233  docker-machine create --driver virtualbox mgr1-docker-service-example
+ 2234  docker-machine ls
+ 2235  docker-machine stop mgr1
+ 2236  docker-machine ssh mgr1-docker-service-example "docker service create --name web-fe -p 8080:8080 --replicas 5 nigelpoulton/pluralsight-docker-ci
+"
+ 2237  docker-machine ssh mgr1-docker-service-example "docker swarm init"
+ 2238  docker-machine ssh mgr1-docker-service-example "docker swarm init --advertise-addr 192.168.99.101:2377 --listen-addr 192.168.99.101:2377"
+ 2239  docker-machine ssh mgr1-docker-service-example "docker service create --name web-fe -p 8080:8080 --replicas 5 nigelpoulton/pluralsight-docker-ci"
+ 2240  docker-machine ssh mgr1 "docker node ls"
+ 2241  docker-machine ssh mgr1-docker-service-example "docker node ls"
+ 2242  docker-machine ssh mgr1-docker-service-example "docker service ls"
+ 2243  docker-machine ssh mgr1-docker-service-example "docker service ps web-fe"
+ 2244  docker-machine ssh mgr1-docker-service-example "docker service inspect --pretty web-fe"
+ 2245  docker-machine ssh mgr1-docker-service-example "docker service ps web-fe"
+ 2246  docker-machine ssh mgr1-docker-service-example "docker service scale web-fe=5"
+ 2247  docker-machine ssh mgr1-docker-service-example "docker service ps web-fe"
+ 2248  docker-machine ssh mgr1-docker-service-example "docker service rm web-fe"
+ 2249  docker-machine ssh mgr1-docker-service-example "docker service ls"
+ 2250  docker-machine create --driver virtualbox mgr1-docker-network-example
+ 2251  docker-machine ssh mgr1-docker-network-example "docker network create -d overlay uber-net"
+ 2252  docker-machine ssh mgr1-docker-network-example "docker swarm init"
+ 2253  docker-machine ssh mgr1-docker-network-example "docker swarm init --advertise-addr 192.168.99.102:2377 --listen-addr 192.168.99.102:2377"
+ 2254  docker-machine ssh mgr1-docker-network-example "docker network create -d overlay uber-net"
+ 2255  docker-machine ssh mgr1-docker-network-example "docker service create --name uber-svc --network uber-net -p 80:80 --replicas 12 nigelpoulton/tu-demo:v1"
+ 2256  docker-machine ssh mgr1-docker-network-example  "docker service ls"
+ 2257  docker-machine ssh mgr1-docker-network-example  "docker service ps uber-svc"
+ 2258  docker-machine ssh mgr1-docker-network-example  "docker service ls"
+ 2259  docker-machine ssh mgr1-docker-network-example "docker service update --image nigelpoulton/tu-demo:v2 --update-parallelism 2 --update-delay 20s uber-svc"
+ 2260  docker-machine ssh mgr1-docker-network-example "docker service ps uber-svc"
+ 2261  docker-machine ssh mgr1-docker-network-example "docker service ls uber-svc"
+ 2262  docker-machine ssh mgr1-docker-network-example "docker service ls"
+ 2263  docker-machine ssh mgr1-docker-network-example "docker service inspect --pretty uber-svc"
+ 2264  docker-machine ssh mgr1-docker-network-example "docker network ls"
+ 2265  docker-machine ssh mgr1-docker-network-example "docker service ls"
+ 2266  docker-machine ssh mgr1-docker-network-example "docker service ps uber-svc"
+ 2267  docker-machine ssh mgr1-docker-network-example  "docker service logs"
+ 2268  docker-machine ssh mgr1-docker-network-example "docker service logs"
+ 2269  docker-machine ssh mgr1-docker-network-example "docker service logs seastack_reverse_proxy"
+ 2270  docker-machine ssh mgr1-docker-network-example "docker service logs uber-svc"
+ 2271  docker network ls
+ 2272  docker network inspect bridge
+ 2273  ip link show docker0
+ 2274  docker network inspect bridge | grep bridge.name
+ 2275  docker network create -d bridge localnet
+ 2276  docker network ls
+ 2277  which brctl
+ 2278  brctl show
+ 2279  sudo apt install bridge-utils
+ 2280  brctl show
+ 2281  docker network inspect localnet
+ 2282  docker network ls
+ 2283* docker container run -d --nam
+ 2284  docker container ls
+ 2285  docker container cc11ea
+ 2286  docker rm cc11ea
+ 2287  docker container run -d --name c1 --network localnet alpine sleep 1d
+ 2288  docker network inspect localnet --format
+ 2289  docker network inspect localnet --format '{{json .Containers}}'
+ 2290  brctl show
+ 2291  docker network inspect localnet
+ 2292  docker container run -it --name ct --network localnet alpine sh
+ 2293  docker container run -d --name web --network localnet --publish 5000:80 nginx
+ 2294  docker port web
+ 2295  docker-machine stop *
+ 2296  ls
+ 2297  docker-machine ls
+ 2298  docker-machine stop mgr1-docker-network-example mgr1-docker-service-example 
+ 2299  ls
+ 2300  docker container ls
+ 2301  docker stop web c1
+ 2302  history | grep docker | vim -
+ 2303  ls
+ 2304  history | grep docker | vim -
+ 2305  history |  vim -

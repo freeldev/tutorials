@@ -1,0 +1,38 @@
+.app {
+    background-color: red;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-flow: row wrap;
+    height: 300px;
+    border: solid black;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+.container>* {
+    border: solid black;
+    width: 250px;
+}
+
+.container :nth-child(1) {
+    background-color: orange;
+}
+
+.container :nth-child(2) {
+    background-color: lightgrey;
+}
+
+.container :nth-child(3) {
+    background-color: blue;
+}
+
+.container :nth-child(4) {
+    background-color: yellow;
+}
+
+.container :nth-child(5) {
+    background-color: green;
+}

@@ -1,0 +1,61 @@
+ 1166  docker-machine create --driver virtualbox myvm1
+ 1169  docker-machine ssh myvm1 "docker swarm init --advertise-addr 192.168.99.100:2376"
+ 1171  docker swarm join --token SWMTKN-1-69vk0kltjdgn7trwoo9ahx8s4aerwoyceud3daqnia0murb6j6-8rfnajt8wg6o1cbswf3dyi9ex 192.
+ 1176  docker-machine ssh myvm1 "docker swarm join --token SWMTKN-1-0nr5mdryxyq7rard1nzmatn8peztr0xwhkuxmd8n5rv25zjx1c-2y7ktf81cs28y440uqfgo1f9a [2a02:ab04:142:b300:fc7c:637b:86:6382]:2377"
+ 1179  docker node ls
+ 1180  docker-machine ls
+ 1184  docker-machine rm myvm1
+ 1188  docker-machine create -d virtualbox --virtualbox-boot2docker-url=https://github.com/boot2docker/boot2docker/releases/download/v17.12.1-ce/boot2docker.iso
+ 1193  docker-machine rm 183
+ 1194  docker-machine ls
+ 1201  eval $(docker-machine env myvm1)
+ 1204  docker stack deploy -c docker-compose.yml getstartedlab
+ 1205  docker stack ps getstartedlab 
+ 1211  docker swarm init
+ 1459  docker build -t friendlyhello .
+ 1836  mkdir kubernetes-docker
+ 1845  vboxmanage controlvm "kubernetes-docker_default_1529134447726_95006" poweroff
+
+ 2029  wget -qO- https://get.docker.com/ | sh
+ 2032  sudo usermod -aG docker a7xce
+ 2034  docker --version
+ 2071  docker image ls
+ 2072  docker images
+ 2073  docker pull ubuntu:latest
+ 2075  docker container run -it ubuntu:latest /bin/bash
+ 2078  docker container ls
+ 2083  docker container exec -it 71516ec36385 bash
+ 2086  docker container stop 71516ec36385
+ 2087  docker container rm 71516ec36385
+ 2090  docker kill $(docker ps -q)
+ 2091  docker container ls
+ 2092  docker container ls -a
+ 2097  docker rm $(docker ps -a -q)
+ 2096  docker kill $(docker ps -a -q)
+ 2098  docker container ls -a
+ 2099  docker container ls
+ 2101  docker kill $(docker ps -a -q)
+ 2103  docker rm $(docker ps -a -q)
+ 2104  docker container ls -a
+ 2105  docker container kill e21cca6171af
+ 2106  docker container rm e21cca6171af
+ 2108  docker swarm
+ 2113  docker service ps
+ 2114  docker-machine ls
+ 2116  docker-machine rm myvm2
+ 2117  docker-machine ls
+ 2118  docker container ls
+ 2119  docker rm $(docker rm -a -q)
+ 2120  docker kill $(docker ps -a -q)
+ 2122  docker container ls -a
+ 2123  docker-machine ls
+ 2124  docker stack rm getstartedlab 
+ 2125  docker container ls
+ 2126  eval $(docker-machine env -u)
+ 2128  docker kill $(docker ps -a -q)
+ 2129  docker rm $(docker ps -a -q)
+ 2145  docker image build
+ 2146  docker image build -t test:latest .
+ 2157  docker container run -d --name web1 --publish 8080:8080 test:latest
+ 2159  docker image pull ubuntu:latest
+ 2160  docker image pull alpine:latest

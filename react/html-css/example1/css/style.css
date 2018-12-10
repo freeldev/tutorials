@@ -1,0 +1,28 @@
+body {
+  color: rgb(0, 0, 0);
+  /* font-weight: bold;
+  font-size: 10px;
+  line-height: 200%;
+  font-family: sans-serif; */
+  font: normal 10px/200% sans-serif;
+  background-color: #e014149c;
+  background-image: url("../boards.jpeg");
+  /* background-repeat: no-repeat; */
+  background-position: bottom;
+  background-color: yellow;
+  /* background: #FCFA90 url('../boards.jpeg') top right repeat; */
+}
+
+p.special {
+  text-align: left;
+  text-decoration: line-through;
+}
+
+.wrapper {
+  background-color: white;
+  /* border-width: 2px;
+  border-style: dashed;
+  border-color: #3399cc; */
+  border-top: 4px solid #3399cc;
+  border-bottom: 4px dotted #3399cc;
+}

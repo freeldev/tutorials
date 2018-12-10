@@ -1,0 +1,29 @@
+##SETUP DJANGO PROJECT
+
+#ALWAYS ADD YOUR APP TO THE SETTINGS FILE !!
+
+#create the virtal environment will show (name_of_environment) before user name in terminal
+#good practice to name the virtual environment as project
+   12  mkvirtualenv profiles_api --python=python3
+
+#specific version of django for tutorial installed
+   33  pip install django==1.11
+
+#sepcifiv version of djangorestframework installed for tutorial
+   38  pip install djangorestframework==3.6.2
+
+#create src folder 
+   39  cd /vagrant/src
+
+#script used to start a django project 
+   40  django-admin.py startproject profiles_project
+   41  cd profiles_project/
+
+#script created by django when runing script above
+#creates an app in our project !!
+#manage.py is in the django root folder
+   43  python manage.py startapp profiles_api
+
+#the two folders with project name 
+	1. root dir
+	2. django settings file for entire django project
